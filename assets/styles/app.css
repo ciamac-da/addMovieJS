@@ -73,8 +73,8 @@ input:focus {
 .btn {
   font: inherit;
   padding: 0.5rem 1.5rem;
-  border: 1px solid #00329e;
-  background: #00329e;
+  border: 1px solid #f67722;
+  background: #f67722;
   color: white;
   border-radius: 6px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
@@ -84,20 +84,23 @@ input:focus {
 
 .btn:hover,
 .btn:active {
-  background: #f67722;
+  background: white;
   border-color: #f67722;
+  color: #f67722;
 }
 
 .btn--passive {
-  color: #00329e;
-  background: transparent;
-  border: none;
+  color:white;
+  background: #d30808;
+  border: 1px solid #d30808;
   box-shadow: none;
 }
 
 .btn--passive:hover,
 .btn--passive:active {
-  background: #aec6f8;
+  background: white;
+  color: #d30808;
+  border-color: #d30808;
 }
 
 .btn--danger {
@@ -135,8 +138,8 @@ input:focus {
 .modal .modal__title {
   margin: 0;
   padding: 1rem;
-  border-bottom: 1px solid #00329e;
-  background: #00329e;
+  border-bottom: 1px solid #f67722;
+  background: #f67722;
   color: white;
   border-radius: 10px 10px 0 0;
 }
