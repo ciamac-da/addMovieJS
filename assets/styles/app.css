@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 html {
@@ -7,6 +8,7 @@ html {
 }
 
 body {
+  background-color: #f67722;
   margin: 0;
 }
 
@@ -21,13 +23,15 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 2.5rem;
-  background: #00329e;
+  background: #595b61;
 }
 
 header h1 {
   margin: 0;
   color: white;
   font-size: 1.5rem;
+  font-weight: bolder;
+  text-shadow: 3px 3px black;
 }
 
 header button {
@@ -43,9 +47,9 @@ header button {
 
 header button:hover,
 header button:active {
-  background: #f3cc4b;
-  border-color: #f3cc4b;
-  color: #995200;
+  background: white;
+  border-color: black;
+  color: #f67722;
 }
 
 label {
