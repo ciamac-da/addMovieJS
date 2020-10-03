@@ -22,14 +22,27 @@ const titleValue = userInfos[0].value;
 const imageUrlValue = userInfos[1].value;
 const ratingValue = userInfos[2].value;
 
-if(titleValue.trim() === "" || 
+if(
+titleValue.trim()    === "" || 
 imageUrlValue.trim() === "" || 
-ratingValue.trim() === ""   ||
+ratingValue.trim()   === "" 
+){
+alert("Please fill out all required field!");
+}else if(
+titleValue.trim()    === "" || 
+imageUrlValue.trim() === "" || 
+ratingValue.trim()   === "" 
+)
+{
+    alert("Please fill out all required fields!");
+}
+else if(
 +ratingValue < 1            ||
 +ratingValue > 10
-){
-alert("Please enter a valid number between 1 and 10!")
-}
+    )
+    {
+        alert("Please enter a valid number between 1 and 10");
+    }
 return;
 }
 
