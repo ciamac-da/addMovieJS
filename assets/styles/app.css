@@ -63,11 +63,12 @@ input {
   border: 1px solid #ccc;
   padding: 0.4rem 0.2rem;
   color: #383838;
+  border-radius: 20px;
 }
 
 input:focus {
   outline: none;
-  background: #fff1c4;
+  background: #f67722;
 }
 
 .btn {
@@ -128,6 +129,7 @@ input:focus {
   top: 30vh;
   left: 10%;
   display: none;
+  height: fit-content;
 }
 
 .modal.visible {
