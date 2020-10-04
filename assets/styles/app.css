@@ -135,6 +135,7 @@ input:focus {
 .modal.visible {
   display: block;
   animation: fade-slide-in .5s ease-out forwards;
+  box-shadow: 5px 5px 5px black;
 }
 
 .modal .modal__title {
@@ -255,4 +256,25 @@ input:focus {
   to {
     transform: translateY(0);
   }
+}
+
+#cancelBtn{
+background-color: #f67722;
+color: white;
+}
+#cancelBtn:active,
+#cancelBtn:hover{
+color: #f67722;
+background-color: white;
+}
+
+
+#confirmBtn{
+background-color: #ff3217;
+color: white;
+}
+#confirmBtn:active,
+#confirmBtn:hover{
+  color: #ff3217;
+  background-color: white;
 }
