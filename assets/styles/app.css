@@ -164,11 +164,11 @@ input:focus {
 
 .movie-element {
   margin: 1rem 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   width: 100%;
+  box-shadow: 5px 5px 5px black;
   height: 350px;
 }
 
