@@ -204,6 +204,10 @@ input:focus {
     width: 100% !important;
     object-fit: cover !important;
 }
+img {
+  height: 100%;
+    width: 100%;
+}
 
 
 .movie-element_info {
