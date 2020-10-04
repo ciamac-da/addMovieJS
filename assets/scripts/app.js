@@ -111,41 +111,32 @@ const addMovieHandler = () => {
     const titleValue = userInputs[0].value;
     const imageUrlValue = userInputs[1].value;
     const ratingValue = userInputs[2].value;
-
     if (
-        titleValue.trim() === "" ||
-        imageUrlValue.trim() === "" ||
-        ratingValue.trim() === ""
-    ) {
-        alert("Please fill out all required field!");
-    } else if (
-        titleValue.trim() === "" ||
-        imageUrlValue.trim() === "" ||
-        ratingValue.trim() === ""
-    ) {
-        alert("Please fill out all required fields!");
-        return;
-    } else if (
+        titleValue.trim() === '' ||
+        imageUrlValue.trim() === '' ||
+        ratingValue.trim() === '' ||
         +ratingValue < 1 ||
         +ratingValue > 10
-    ) {
-        alert("Please enter a valid number between 1 and 10");
+      ) {
+        alert("Please fill out all fields and enter a valid number between 1 and 10!");
         return;
-    }
+      }
+    
     const newMovie = {
         id: Math.random().toString(),
         title: titleValue,
         image: imageUrlValue,
         rating: ratingValue,
-    }
+    };
+
     movies.push(newMovie);
     console.log(movies);
     closeMovieModal();
     clearMovieInput();
     toggleBackdrop();
-    updateUI();
     newRendermovieElement(newMovie.id, newMovie.title, newMovie.image, newMovie.rating);
-}
+    updateUI();
+};
 
 
 const backdropClickHandler = () => {
