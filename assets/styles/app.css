@@ -187,22 +187,32 @@ input:focus {
  
 }
 
-.movie-element__image {
+.movie-element_image {
   flex: 1;
   border-radius: 10px 0 0 10px;
   overflow: hidden;
 }
 
-.movie-element__image img {
+.movie-element_image img {
   height: 300px;
   width: 100%;
   object-fit: cover;
 }
 
-.movie-element__info {
-  flex: 2;
+.movie-element_info {
   padding: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }
+
+.movie-element_info h2 {
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
 
 #entry-text {
   width: 40rem;
