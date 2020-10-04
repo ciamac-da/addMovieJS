@@ -145,10 +145,15 @@ input:focus {
   background: #f67722;
   color: white;
   border-radius: 10px 10px 0 0;
+  text-align: center;
 }
 
 .modal .modal__content {
-  padding: 1rem;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+  padding: 20px
 }
 
 .modal .modal__actions {
@@ -278,6 +283,8 @@ input:focus {
 #cancelBtn{
 background-color: #f67722;
 color: white;
+width: 120px;
+height: 70px;
 }
 #cancelBtn:active,
 #cancelBtn:hover{
@@ -289,6 +296,8 @@ background-color: white;
 #confirmBtn{
 background-color: #ff3217;
 color: white;
+width: 120px;
+height: 70px;
 }
 #confirmBtn:active,
 #confirmBtn:hover{
