@@ -74,7 +74,7 @@ const newMovieElement = document.createElement("li");
    newMovieElement.className = "movie-element"
    newMovieElement.innerHTML = `
    <div class="movie-element_image">
-   <img src="${imageUrl}">
+   <img src="${imageUrl}" id="new-img">
    </div>
    <div class="movie-element_info">
    <h2>${title}</h2>

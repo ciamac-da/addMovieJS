@@ -198,10 +198,13 @@ input:focus {
   overflow: hidden;
 }
 
-.movie-element_image img {
-  height: 100%;
-  object-fit: cover;
+
+.new-img{
+   height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
+
 
 .movie-element_info {
   padding: 1rem;
