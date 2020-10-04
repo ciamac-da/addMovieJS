@@ -5,6 +5,7 @@ const cancelAddMovieButton = addMovieModal.querySelector(".btn--passive");
 const confirmAddMovieButton = cancelAddMovieButton.nextElementSibling;
 const userInputs = addMovieModal.querySelectorAll("input");
 const entryTextSection = document.getElementById("entry-text");
+const deleteMovieModal = document.getElementById("delete-modal");
 
 
 
@@ -35,9 +36,15 @@ listRoot.children[movieIndex].remove();
 //listRoot.removeChild(listRoot.children[movieIndex]);
 }
 
+
+const cancelMovieDeletationModal = () =>{
+    toggleBackdrop();
+    deleteMovieModal.classList.remove("visible");
+}
+
 const deleteMovieHandler = (movieId) =>{
-const deleteMovieModal = document.getElementById("delete-modal");
 deleteMovieModal.classList.add("visible");
+toggleBackdrop();
     //deleteMovie(movieId);
 }
 
@@ -65,8 +72,13 @@ const toggleBackdrop = () => {
     backdrop.classList.toggle("visible");
 }
 
-const toggleMovieModal = () => {
-    addMovieModal.classList.toggle("visible");
+const closeMovieModal = () => {
+addMovieModal.classList.remove("visible");
+};
+
+
+const showMovieModal = () => {
+    addMovieModal.classList.add("visible");
     toggleBackdrop();
 }
 
@@ -110,23 +122,25 @@ const addMovieHandler = () => {
     }
     movies.push(newMovie);
     console.log(movies);
-    toggleMovieModal();
+    closeMovieModal();
     clearMovieInput();
+    toggleBackdrop();
     updateUI();
     newRendermovieElement(newMovie.id, newMovie.title, newMovie.image, newMovie.rating);
 }
 
 
 const backdropClickHandler = () => {
-    toggleMovieModal();
+    closeMovieModal();
+    cancelMovieDeletationModal();
 }
 
 const cancelAddMovieHandler = () => {
-    toggleMovieModal();
+    closeMovieModal();
     clearMovieInput();
 }
 
-startAddMovieButton.addEventListener("click", toggleMovieModal);
+startAddMovieButton.addEventListener("click", showMovieModal);
 backdrop.addEventListener("click", backdropClickHandler);
 cancelAddMovieButton.addEventListener("click", cancelAddMovieHandler);
 confirmAddMovieButton.addEventListener("click", addMovieHandler);
