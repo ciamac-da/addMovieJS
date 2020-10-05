@@ -25,54 +25,54 @@ const updateUI = () => {
 }
 
 
-const closeMovieDeletionModal = () =>{
+const closeMovieDeletionModal = () => {
     toggleBackdrop();
     deleteMovieModal.classList.remove("visible");
 }
 
-const deleteMovieHandler = movieId =>{
+const deleteMovieHandler = movieId => {
     let movieIndex = 0;
-for (const movie of movies){
-    if(movie.id === movieId){
-        break;
+    for (const movie of movies) {
+        if (movie.id === movieId) {
+            break;
+        }
+        movieIndex++;
     }
-    movieIndex++;
-}
-// index and the item you wanna remove
-movies.splice(movieIndex,1)
-const listRoot = document.getElementById("movie-list");
-listRoot.children[movieIndex].remove();
-// alternative of bottom line
-//listRoot.removeChild(listRoot.children[movieIndex]);
-closeMovieDeletionModal();
-updateUI();
+    // index and the item you wanna remove
+    movies.splice(movieIndex, 1)
+    const listRoot = document.getElementById("movie-list");
+    listRoot.children[movieIndex].remove();
+    // alternative of bottom line
+    //listRoot.removeChild(listRoot.children[movieIndex]);
+    closeMovieDeletionModal();
+    updateUI();
 }
 
 
 
 
-const startDeleteMovieHandler = (movieId) =>{
- deleteMovieModal.classList.add("visible");
- toggleBackdrop();
- const cancelDeletionButton = deleteMovieModal.querySelector(".btn--passive");
- let confirmDeletionButton = deleteMovieModal.querySelector(".btn--danger");
- 
- confirmDeletionButton.replaceWith(confirmDeletionButton.cloneNode(true));
- 
- confirmDeletionButton = deleteMovieModal.querySelector(".btn--danger");
+const startDeleteMovieHandler = (movieId) => {
+    deleteMovieModal.classList.add("visible");
+    toggleBackdrop();
+    const cancelDeletionButton = deleteMovieModal.querySelector(".btn--passive");
+    let confirmDeletionButton = deleteMovieModal.querySelector(".btn--danger");
 
- cancelDeletionButton.removeEventListener("click", closeMovieDeletionModal);   
- cancelDeletionButton.addEventListener("click", closeMovieDeletionModal);   
- confirmDeletionButton.addEventListener("click", deleteMovieHandler.bind(null,movieId))
- //deleteMovie(movieId);
+    confirmDeletionButton.replaceWith(confirmDeletionButton.cloneNode(true));
+
+    confirmDeletionButton = deleteMovieModal.querySelector(".btn--danger");
+
+    cancelDeletionButton.removeEventListener("click", closeMovieDeletionModal);
+    cancelDeletionButton.addEventListener("click", closeMovieDeletionModal);
+    confirmDeletionButton.addEventListener("click", deleteMovieHandler.bind(null, movieId))
+    //deleteMovie(movieId);
 
 }
 
 
-const newRendermovieElement = (id, title,imageUrl, rating) => {
-const newMovieElement = document.createElement("li");
-   newMovieElement.className = "movie-element"
-   newMovieElement.innerHTML = `
+const newRendermovieElement = (id, title, imageUrl, rating) => {
+    const newMovieElement = document.createElement("li");
+    newMovieElement.className = "movie-element"
+    newMovieElement.innerHTML = `
    <div class="movie-element_image">
    <img src="${imageUrl}" id="new-img">
    </div>
@@ -82,16 +82,16 @@ const newMovieElement = document.createElement("li");
    </div>
    `;
 
-   newMovieElement.addEventListener("click", startDeleteMovieHandler.bind(null, id));
-   const listRoot = document.getElementById("movie-list");
-   listRoot.append(newMovieElement);
+    newMovieElement.addEventListener("click", startDeleteMovieHandler.bind(null, id));
+    const listRoot = document.getElementById("movie-list");
+    listRoot.append(newMovieElement);
 }
 
 
 
 
 const closeMovieModal = () => {
-addMovieModal.classList.remove("visible");
+    addMovieModal.classList.remove("visible");
 };
 
 
@@ -117,11 +117,11 @@ const addMovieHandler = () => {
         ratingValue.trim() === '' ||
         +ratingValue < 1 ||
         +ratingValue > 10
-      ) {
+    ) {
         alert("Please fill out all fields and enter a valid number between 1 and 10!");
         return;
-      }
-    
+    }
+
     const newMovie = {
         id: Math.random().toString(),
         title: titleValue,
